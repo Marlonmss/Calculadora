@@ -10,7 +10,8 @@ int main()
 	C.atribuir(3.0,1.0,0.0);
 	
 	cout << "A soma dos valores de C e: " << C.somar() << endl;
-	cout << "A multiplicação dos valores de A e: " << A.multiplicar() << endl;
+	cout << "A multiplicacao dos valores de A e: " << A.multiplicar() << endl;
+	cout << "O modulo de T e: " << T.calcModulo() << endl;
 	cout << "A betagem de B e: " << B.betar() << endl;
 	cout << "o valor de beta: " << Calculadora::retorna_beta() << endl;
 	S = T+R;
