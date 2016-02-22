@@ -1,0 +1,1 @@
+./Debug/main.cpp.o ./Debug/Calculadora.cpp.o ./Debug/Data.cpp.o ./Debug/Ponto.cpp.o   
