@@ -22,6 +22,7 @@ class Calculadora
         static double retorna_beta();
         static void divertir(const string& meme);
         void operarPontos();
+        void listarPontos(Ponto* pont);
     private:
         double a;
         double b;

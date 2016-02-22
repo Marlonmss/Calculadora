@@ -82,3 +82,10 @@ void Calculadora::operarPontos()
     delta = delta + b;
     delta = delta + c;
 }
+
+void Calculadora::criarnPontos(Ponto* pont, const int& n)
+{
+    pont = new Ponto[n];
+    for(int i=0; i<n; i++)
+        pont[i].atribuir(1.0,2.0,3.0);
+}
