@@ -91,3 +91,22 @@ void Calculadora::guardarAntigos()
 {
 	memorizar(variavel_a, variavel_b, variavel_c);
 }
+
+void Calculadora::adicionarPonto(const Ponto& pont, int& n, Ponto lista[])
+{
+	Ponto* aux = new Ponto[n];
+	
+	for(int i = 0; i<n; i++)
+		aux[i] = lista[i];
+		
+	delete [] lista;
+	
+	lista = new Ponto[++n];
+	
+	for(int i = 0; i<n-1; i++)
+		lista[i] = aux[i];
+		
+	lista[n-1] = pont;
+	
+	delete [] aux;
+}

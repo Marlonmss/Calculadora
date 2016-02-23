@@ -24,6 +24,7 @@ class Calculadora
         static void divertir(const string& meme);
         void operarPontos();
 		void guardarAntigos();
+		void adicionarPonto(const Ponto& pont, int& n, Ponto lista[]);
     private:
         double variavel_a;
         double variavel_b;
