@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Alguem
-Date                   :=22/02/2016
+Date                   :=23/02/2016
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
@@ -62,7 +62,7 @@ AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) 
 
 
 
@@ -124,6 +124,14 @@ $(IntermediateDirectory)/Ponto.cpp$(DependSuffix): Ponto.cpp
 
 $(IntermediateDirectory)/Ponto.cpp$(PreprocessSuffix): Ponto.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Ponto.cpp$(PreprocessSuffix) "Ponto.cpp"
+
+$(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix): Memoria.cpp $(IntermediateDirectory)/Memoria.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Alguem/git/Calculadora/Calculadora/Calculadora/Memoria.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Memoria.cpp$(DependSuffix): Memoria.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Memoria.cpp$(DependSuffix) -MM "Memoria.cpp"
+
+$(IntermediateDirectory)/Memoria.cpp$(PreprocessSuffix): Memoria.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Memoria.cpp$(PreprocessSuffix) "Memoria.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

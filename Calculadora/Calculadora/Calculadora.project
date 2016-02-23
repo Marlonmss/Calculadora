@@ -98,5 +98,7 @@
     <File Name="Data.cpp"/>
     <File Name="Ponto.h"/>
     <File Name="Ponto.cpp"/>
+    <File Name="Memoria.h"/>
+    <File Name="Memoria.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

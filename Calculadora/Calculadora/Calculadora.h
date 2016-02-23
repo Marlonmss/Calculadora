@@ -2,6 +2,7 @@
 #define CALCULADORA_H
 #include "Data.h"
 #include "Ponto.h"
+#include "Memoria.h"
 #include <string>
 using std::string;
 
@@ -22,11 +23,11 @@ class Calculadora
         static double retorna_beta();
         static void divertir(const string& meme);
         void operarPontos();
-        void listarPontos(Ponto* pont);
+		void guardarAntigos();
     private:
-        double a;
-        double b;
-        double c;
+        double variavel_a;
+        double variavel_b;
+        double variavel_c;
         Ponto alpha;
         Ponto gama;
         Ponto delta;
