@@ -4,6 +4,7 @@
 #include "Ponto.h"
 #include "Memoria.h"
 #include <string>
+#include <iostream>
 using std::string;
 
 class Calculadora
@@ -25,6 +26,7 @@ class Calculadora
         void operarPontos();
 		void guardarAntigos();
 		void adicionarPonto(const Ponto& pont, int& n, Ponto lista[]);
+        friend ostream &operator<<(ostream &, const Calculadora &);
     private:
         double variavel_a;
         double variavel_b;

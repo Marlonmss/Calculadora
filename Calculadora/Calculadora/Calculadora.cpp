@@ -110,3 +110,9 @@ void Calculadora::adicionarPonto(const Ponto& pont, int& n, Ponto lista[])
 	
 	delete [] aux;
 }
+
+ostream &operator<<(ostream &, const Calculadora &)
+{
+    output << '(' << x << ',' << y << ',' << z << ',' << t << ',' << u << ')';
+    return output;
+}

@@ -51,3 +51,20 @@ Ponto Ponto::operator/(const double& n)
 {
     return Ponto(x/n,y/n,z/n,t/n,u/n);
 }
+
+bool Ponto::operator==(const Ponto& B)
+{
+    if(x==B.x && y==B.y && z==B.z && t==B.t && u==B.u)
+        return true;
+    return false;
+}
+
+void Ponto::operator=(const Ponto& B)
+{
+    x = B.x;
+    y = B.y;
+    z = B.z;
+    t = B.t;
+    u = B.u;
+}
+
