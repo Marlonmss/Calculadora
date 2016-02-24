@@ -9,6 +9,7 @@ using std::string;
 
 class Calculadora
 {
+    friend ostream &operator<<(ostream &, const Calculadora &);
     public:
         Calculadora();
         Calculadora(const double& aa, const double& bb, const double& cc);
@@ -26,7 +27,6 @@ class Calculadora
         void operarPontos();
 		void guardarAntigos();
 		void adicionarPonto(const Ponto& pont, int& n, Ponto lista[]);
-        friend ostream &operator<<(ostream &, const Calculadora &);
     private:
         double variavel_a;
         double variavel_b;

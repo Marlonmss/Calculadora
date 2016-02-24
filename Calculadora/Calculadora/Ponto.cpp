@@ -59,7 +59,7 @@ bool Ponto::operator==(const Ponto& B)
     return false;
 }
 
-void Ponto::operator=(const Ponto& B)
+const Ponto& Ponto::operator=(const Ponto& B)
 {
     x = B.x;
     y = B.y;
