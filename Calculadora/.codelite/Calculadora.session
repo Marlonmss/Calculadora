@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora.workspace">
-  <int Value="1" Name="m_selectedTab"/>
+  <int Value="0" Name="m_selectedTab"/>
   <wxString Value="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora\Calculadora.h" Name="FileName"/>
-      <int Value="14" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="26" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora\Calculadora.cpp" Name="FileName"/>
-      <int Value="63" Name="FirstVisibleLine"/>
+      <int Value="0" Name="FirstVisibleLine"/>
       <int Value="91" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
