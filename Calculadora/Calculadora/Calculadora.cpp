@@ -1,16 +1,15 @@
 #include "Calculadora.h"
 #include <iostream>
-using std::cout;
-using std::endl;
+using namespace std;
 
 const string Calculadora::easter_egg = "\t\tnice meme";
 
 Calculadora::Calculadora() 
-: variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis(0,0,0)
+: variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis()
 {}
 
 Calculadora::Calculadora(const double& aa, const double& bb, const double& cc) 
-: variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis(0,0,0)
+: variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis()
 {}
 
 Calculadora::Calculadora(const Calculadora& co)
@@ -91,7 +90,7 @@ void Calculadora::operarPontos()
 
 void Calculadora::guardarAntigos()
 {
-	variaveis(variavel_a, variavel_b, variavel_c);
+	variaveis.memorizar(variavel_a, variavel_b, variavel_c);
 }
 
 void Calculadora::adicionarPonto(const Ponto& pont, int& n)
@@ -121,8 +120,8 @@ void Calculadora::adicionarPonto(const Ponto& pont, int& n)
 	}
 }
 
-ostream &operator<<(ostream &, const Calculadora &)
+ostream &operator<<(ostream &output, const Calculadora &imprime)
 {
-    output << '(' << x << ',' << y << ',' << z << ',' << t << ',' << u << ')';
+    output << imprime.variavel_a << ", " << imprime.variavel_b << ", " << imprime.variavel_c;
     return output;
 }

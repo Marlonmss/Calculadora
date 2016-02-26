@@ -5,8 +5,7 @@
 #include "Memoria.h"
 #include <string>
 #include <iostream>
-#include <ios>
-using std::string;
+using namespace std;
 
 class Calculadora
 {
@@ -27,7 +26,7 @@ class Calculadora
         static void divertir(const string& meme);
         void operarPontos();
 		void guardarAntigos();
-		void adicionarPonto(const Ponto& pont, int& n, Ponto lista[]);
+		void adicionarPonto(const Ponto& pont, int& n);
     private:
         double variavel_a;
         double variavel_b;
@@ -35,7 +34,7 @@ class Calculadora
         Ponto alpha;
         Ponto gama;
         Ponto delta;
-		Ponto Lista[];
+		Ponto* lista;
 		Memoria variaveis;
         const static string easter_egg;
         const static double beta = 1.6646234298426847;
