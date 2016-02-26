@@ -5,11 +5,12 @@ using std::endl;
 
 const string Calculadora::easter_egg = "\t\tnice meme";
 
-Calculadora::Calculadora() : variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0)
+Calculadora::Calculadora() 
+: variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis(0,0,0)
 {}
 
 Calculadora::Calculadora(const double& aa, const double& bb, const double& cc) 
-: variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0)
+: variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis(0,0,0)
 {}
 
 Calculadora::Calculadora(const Calculadora& co)
@@ -20,6 +21,7 @@ Calculadora::Calculadora(const Calculadora& co)
 	alpha = co.alpha;
 	gama = co.gama;
 	delta = co.delta;
+	variaveis = co.variaveis;
 }
 
 Calculadora::Calculadora(const int& dia, const int& mes, const int& ano) : ligou(dia,mes,ano)
@@ -89,26 +91,34 @@ void Calculadora::operarPontos()
 
 void Calculadora::guardarAntigos()
 {
-	memorizar(variavel_a, variavel_b, variavel_c);
+	variaveis(variavel_a, variavel_b, variavel_c);
 }
 
-void Calculadora::adicionarPonto(const Ponto& pont, int& n, Ponto lista[])
+void Calculadora::adicionarPonto(const Ponto& pont, int& n)
 {
-	Ponto* aux = new Ponto[n];
-	
-	for(int i = 0; i<n; i++)
-		aux[i] = lista[i];
-		
-	delete [] lista;
-	
-	lista = new Ponto[++n];
-	
-	for(int i = 0; i<n-1; i++)
-		lista[i] = aux[i];
-		
-	lista[n-1] = pont;
-	
-	delete [] aux;
+	if(n)
+	{
+		Ponto* aux = new Ponto[n];
+
+		for(int i = 0; i<n; i++)
+			aux[i] = lista[i];
+
+		delete [] lista;
+
+		lista = new Ponto[++n];
+
+		for(int i = 0; i<n-1; i++)
+			lista[i] = aux[i];
+
+		lista[n-1] = pont;
+
+		delete [] aux;
+	}
+	else
+	{
+		lista = new Ponto[++n];
+		lista[0] = pont;
+	}
 }
 
 ostream &operator<<(ostream &, const Calculadora &)

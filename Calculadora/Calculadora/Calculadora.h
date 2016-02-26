@@ -5,6 +5,7 @@
 #include "Memoria.h"
 #include <string>
 #include <iostream>
+#include <ios>
 using std::string;
 
 class Calculadora
@@ -34,6 +35,8 @@ class Calculadora
         Ponto alpha;
         Ponto gama;
         Ponto delta;
+		Ponto Lista[];
+		Memoria variaveis;
         const static string easter_egg;
         const static double beta = 1.6646234298426847;
         const Data ligou;
