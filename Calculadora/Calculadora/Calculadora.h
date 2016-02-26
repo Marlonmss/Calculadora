@@ -4,10 +4,12 @@
 #include "Ponto.h"
 #include "Memoria.h"
 #include <string>
+#include <iostream>
 using std::string;
 
 class Calculadora
 {
+    friend ostream &operator<<(ostream &, const Calculadora &);
     public:
         Calculadora();
         Calculadora(const double& aa, const double& bb, const double& cc);

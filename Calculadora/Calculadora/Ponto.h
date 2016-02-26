@@ -18,7 +18,8 @@ class Ponto
         Ponto operator*(const double& n);
         Ponto operator/(Ponto B);
         Ponto operator/(const double& n);
-
+        bool operator==(const Ponto& B);
+        const Ponto& operator=(const Ponto& B);
     private:
         double x;
 		double y;
