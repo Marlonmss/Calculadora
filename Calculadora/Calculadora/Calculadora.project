@@ -100,5 +100,9 @@
     <File Name="Ponto.cpp"/>
     <File Name="Memoria.h"/>
     <File Name="Memoria.cpp"/>
+    <File Name="Cientifica.h"/>
+    <File Name="Cientifica.cpp"/>
+    <File Name="Financeira.h"/>
+    <File Name="Financeira.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
