@@ -1,5 +1,6 @@
 #ifndef FINANCEIRA_H
 #define FINANCEIRA_H
+using namespace std;
 
 class Financeira : public Calculadora
 {

@@ -1,7 +1,7 @@
 #ifndef CIENTIFICA_H
 #define CIENTIFICA_H
 #include <cmath>
-
+using namespace std;
 
 class Cientifica : public Calculadora
 {
