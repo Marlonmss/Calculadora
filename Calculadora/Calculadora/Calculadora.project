@@ -104,5 +104,7 @@
     <File Name="Cientifica.cpp"/>
     <File Name="Financeira.h"/>
     <File Name="Financeira.cpp"/>
+    <File Name="Moeda.h"/>
+    <File Name="Moeda.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>

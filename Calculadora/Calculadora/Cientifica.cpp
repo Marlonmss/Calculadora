@@ -26,8 +26,9 @@ double Cientifica::tangente(const double& teta)
     return valor_tangente = tan(teta);
 }
 
-ostream &operator<<(ostream &output, const Cientifica &imprime)
+ostream &operator<<(ostream &output, const Cientifica &imprime, const static_cast<Calculadora*> &imp)
 {
-    output << imprime.valor_seno << ", " << imprime.valor_cosseno << ", " << imprime.valor_tangente;
+    output << imprime.valor_seno << ", " << imprime.valor_cosseno << ", " << imprime.valor_tangente << ", " << imp.variavel_a << ", " << imp.variavel_b << ", " << imp.variavel_c
+    << ", " << ;
     return output;
 }
