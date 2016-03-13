@@ -35,7 +35,7 @@ class Calculadora
         Ponto gama;
         Ponto delta;
 		Ponto* lista;
-		Memoria variaveis;
+		Memoria memo;
         const static string easter_egg;
         const static double beta = 1.6646234298426847;
         const Data ligou;
