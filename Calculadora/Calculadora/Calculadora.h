@@ -10,6 +10,7 @@ using namespace std;
 class Calculadora
 {
     friend ostream &operator<<(ostream &, const Calculadora &);
+	
     public:
         Calculadora();
         Calculadora(const double& aa, const double& bb, const double& cc);
@@ -19,6 +20,7 @@ class Calculadora
         void imprimir() const;
 		void imprimirPontos() const;
 		void imprimirData() const;
+		void imprimirTudo() const;
         double somar() const;
         double multiplicar() const;
         double betar() const;
@@ -26,16 +28,20 @@ class Calculadora
         static void divertir(const string& meme);
         void operarPontos();
 		void guardarAntigos();
-		void adicionarPonto(const Ponto& pont, int& n);
-    private:
-        double variavel_a;
+		void adicionarPonto(const Ponto& pont);
+		
+	protected:
+		double variavel_a;
         double variavel_b;
         double variavel_c;
         Ponto alpha;
         Ponto gama;
         Ponto delta;
 		Ponto* lista;
-		Memoria variaveis;
+		Memoria memo;
+		int dim;
+		
+    private:
         const static string easter_egg;
         const static double beta = 1.6646234298426847;
         const Data ligou;

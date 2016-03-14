@@ -1,11 +1,12 @@
 #ifndef CIENTIFICA_H
 #define CIENTIFICA_H
 #include <cmath>
+#include "Calculadora.h"
 using namespace std;
 
 class Cientifica : public Calculadora
 {
-    friend ostream &operator<<(ostream &, const Calculadora &);
+    friend ostream &operator<<(ostream &, const Cientifica &);
     public:
         Cientifica();
         Cientifica(const Cientifica& c);

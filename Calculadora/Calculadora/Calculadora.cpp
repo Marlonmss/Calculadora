@@ -5,11 +5,11 @@ using namespace std;
 const string Calculadora::easter_egg = "\t\tnice meme";
 
 Calculadora::Calculadora() 
-: variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis()
+: memo(), variavel_a(0), variavel_b(0), variavel_c(0), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), lista(NULL), dim(0)
 {}
 
 Calculadora::Calculadora(const double& aa, const double& bb, const double& cc) 
-: variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), variaveis()
+: memo(), variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), lista(NULL), dim(0)
 {}
 
 Calculadora::Calculadora(const Calculadora& co)
@@ -20,7 +20,11 @@ Calculadora::Calculadora(const Calculadora& co)
 	alpha = co.alpha;
 	gama = co.gama;
 	delta = co.delta;
-	variaveis = co.variaveis;
+	memo = co.memo;
+	dim = co.dim;
+	lista = new Ponto[dim];
+	for(int i=0; i<dim; i++)
+		lista[i] = co.lista[i];
 }
 
 Calculadora::Calculadora(const int& dia, const int& mes, const int& ano) : ligou(dia,mes,ano)
@@ -48,6 +52,17 @@ void Calculadora::imprimirPontos() const
 void Calculadora::imprimirData() const
 {
 	ligou.print();
+}
+
+void Calculadora::imprimirTudo() const
+{
+	imprimir();
+	alpha.imprimir();
+	gama.imprimir();
+	delta.imprimir();
+	for(int i=0; i<dim; i++)
+		lista[i].imprimir();
+	memo.imprimir();
 }
 
 double Calculadora::somar() const
@@ -90,32 +105,32 @@ void Calculadora::operarPontos()
 
 void Calculadora::guardarAntigos()
 {
-	variaveis.memorizar(variavel_a, variavel_b, variavel_c);
+	memo.memorizar(variavel_a, variavel_b, variavel_c);
 }
 
-void Calculadora::adicionarPonto(const Ponto& pont, int& n)
+void Calculadora::adicionarPonto(const Ponto& pont)
 {
-	if(n)
+	if(dim)
 	{
-		Ponto* aux = new Ponto[n];
+		Ponto* aux = new Ponto[dim];
 
-		for(int i = 0; i<n; i++)
+		for(int i = 0; i<dim; i++)
 			aux[i] = lista[i];
 
 		delete [] lista;
 
-		lista = new Ponto[++n];
+		lista = new Ponto[++dim];
 
-		for(int i = 0; i<n-1; i++)
+		for(int i = 0; i<dim-1; i++)
 			lista[i] = aux[i];
 
-		lista[n-1] = pont;
+		lista[dim-1] = pont;
 
 		delete [] aux;
 	}
 	else
 	{
-		lista = new Ponto[++n];
+		lista = new Ponto[++dim];
 		lista[0] = pont;
 	}
 }
@@ -123,5 +138,13 @@ void Calculadora::adicionarPonto(const Ponto& pont, int& n)
 ostream &operator<<(ostream &output, const Calculadora &imprime)
 {
     output << imprime.variavel_a << ", " << imprime.variavel_b << ", " << imprime.variavel_c;
+	imprime.alpha.imprimir();
+	imprime.gama.imprimir();
+	imprime.delta.imprimir();
+	for(int i=0; i<imprime.dim; i++)
+	{
+		imprime.lista[i].imprimir();
+	}
+	imprime.memo.imprimir();
     return output;
 }

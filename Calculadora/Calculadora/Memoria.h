@@ -1,11 +1,14 @@
 #ifndef MEMORIA_H
 #define MEMORIA_H
+#include <iostream>
+using namespace std;
 
 class Memoria
 {
 	public:
 		Memoria();
 		void memorizar(const double& a, const double& b, const double& c);
+		void imprimir() const;
 	private:
 		double reg1;
 		double reg2;

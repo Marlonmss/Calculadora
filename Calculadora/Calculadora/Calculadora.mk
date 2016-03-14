@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Alguem
-Date                   :=26/02/2016
+Date                   :=13/03/2016
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
@@ -62,7 +62,7 @@ AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) $(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix) $(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix) 
 
 
 
@@ -132,6 +132,30 @@ $(IntermediateDirectory)/Memoria.cpp$(DependSuffix): Memoria.cpp
 
 $(IntermediateDirectory)/Memoria.cpp$(PreprocessSuffix): Memoria.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Memoria.cpp$(PreprocessSuffix) "Memoria.cpp"
+
+$(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix): Cientifica.cpp $(IntermediateDirectory)/Cientifica.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Alguem/git/Calculadora/Calculadora/Calculadora/Cientifica.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Cientifica.cpp$(DependSuffix): Cientifica.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Cientifica.cpp$(DependSuffix) -MM "Cientifica.cpp"
+
+$(IntermediateDirectory)/Cientifica.cpp$(PreprocessSuffix): Cientifica.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Cientifica.cpp$(PreprocessSuffix) "Cientifica.cpp"
+
+$(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix): Financeira.cpp $(IntermediateDirectory)/Financeira.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Alguem/git/Calculadora/Calculadora/Calculadora/Financeira.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Financeira.cpp$(DependSuffix): Financeira.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Financeira.cpp$(DependSuffix) -MM "Financeira.cpp"
+
+$(IntermediateDirectory)/Financeira.cpp$(PreprocessSuffix): Financeira.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Financeira.cpp$(PreprocessSuffix) "Financeira.cpp"
+
+$(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix): Moeda.cpp $(IntermediateDirectory)/Moeda.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Alguem/git/Calculadora/Calculadora/Calculadora/Moeda.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Moeda.cpp$(DependSuffix): Moeda.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Moeda.cpp$(DependSuffix) -MM "Moeda.cpp"
+
+$(IntermediateDirectory)/Moeda.cpp$(PreprocessSuffix): Moeda.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Moeda.cpp$(PreprocessSuffix) "Moeda.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

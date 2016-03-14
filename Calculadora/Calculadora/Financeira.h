@@ -1,5 +1,6 @@
 #ifndef FINANCEIRA_H
 #define FINANCEIRA_H
+#include "Calculadora.h"
 using namespace std;
 
 class Financeira : public Calculadora
@@ -10,8 +11,9 @@ class Financeira : public Calculadora
         Financeira(const Financeira& c);
         double calcJuros_simples(const double& capital, const double& taxa, const int& periodos);
         double calcjuros_composta(const double& capital, const double& taxa, const int& periodos);
-    private:
-        double valor_simples;
+		void imprimir() const;
+	protected:
+		double valor_simples;
         double valor_composto;
 };
 
