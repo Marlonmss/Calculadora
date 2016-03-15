@@ -9,6 +9,7 @@ class Memoria
 		Memoria();
 		void memorizar(const double& a, const double& b, const double& c);
 		void imprimir() const;
+		const Memoria& operator=(const Memoria& co);
 	private:
 		double reg1;
 		double reg2;

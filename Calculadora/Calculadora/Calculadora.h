@@ -29,6 +29,7 @@ class Calculadora
         void operarPontos();
 		void guardarAntigos();
 		void adicionarPonto(const Ponto& pont);
+		const Calculadora& operator=(const Calculadora& co);
 		
 	protected:
 		double variavel_a;

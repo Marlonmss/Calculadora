@@ -148,3 +148,18 @@ ostream &operator<<(ostream &output, const Calculadora &imprime)
 	imprime.memo.imprimir();
     return output;
 }
+
+const Calculadora& Calculadora::operator=(const Calculadora& co)
+{
+	variavel_a = co.variavel_a;
+    variavel_b = co.variavel_b;
+    variavel_c = co.variavel_c;
+	alpha = co.alpha;
+	gama = co.gama;
+	delta = co.delta;
+	memo = co.memo;
+	dim = co.dim;
+	lista = new Ponto[dim];
+	for(int i=0; i<dim; i++)
+		lista[i] = co.lista[i];
+}

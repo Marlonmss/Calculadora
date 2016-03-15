@@ -12,6 +12,7 @@ class Moeda : public Financeira
 		~Moeda();
 		double converter_para_real(const double& dol, const double& fator);
 		double converter_para_dolar(const double& rea, const double& fator);
+		const Moeda& operator=(const Moeda& c);
 	private:
 		double real;
 		double dolar;

@@ -31,3 +31,20 @@ ostream &operator<<(ostream &output, const Financeira &imprime)
 	imprime.imprimirTudo();
     return output;
 }
+
+const Financeira& Financeira::operator=(const Financeira& c)
+{
+	static_cast<Calculadora> (c);
+	valor_simples = c.valor_simples;
+    valor_composto = c.valor_composto;
+	variavel_a = c.variavel_a;
+	variavel_b = c.variavel_b;
+	variavel_c = c.variavel_c;
+	alpha = c.alpha;
+	gama = c.gama;
+	delta = c.delta;
+	lista = new Ponto[dim];
+	for(int i=0; i<dim; i++)
+		lista[i] = c.lista[i];
+	memo = c.memo;
+}

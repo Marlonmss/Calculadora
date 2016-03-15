@@ -13,6 +13,7 @@ class Cientifica : public Calculadora
         double seno(const double& teta);
         double cosseno(const double& teta);
         double tangente(const double& teta);
+		const Cientifica& operator=(const Cientifica& c);
     private:
         double valor_seno;
         double valor_cosseno;

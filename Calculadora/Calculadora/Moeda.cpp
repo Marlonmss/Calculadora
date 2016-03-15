@@ -32,3 +32,12 @@ ostream &operator<<(ostream &output, const Moeda &imprime)
 	imprime.imprimir();
     return output;
 }
+
+const Moeda& Moeda::operator=(const Moeda& c)
+{
+	static_cast<Financeira> (c);
+	real = c.real;
+	dolar = c.dolar;
+	valor_simples = c.valor_simples;
+	valor_composto = c.valor_composto;
+}

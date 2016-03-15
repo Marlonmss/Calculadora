@@ -12,6 +12,7 @@ class Financeira : public Calculadora
         double calcJuros_simples(const double& capital, const double& taxa, const int& periodos);
         double calcjuros_composta(const double& capital, const double& taxa, const int& periodos);
 		void imprimir() const;
+		const Financeira& operator=(const Financeira& c);
 	protected:
 		double valor_simples;
         double valor_composto;
