@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-class Calculadora
+class Calculadora : public Dispositivo
 {
     friend ostream &operator<<(ostream &, const Calculadora &);
 	

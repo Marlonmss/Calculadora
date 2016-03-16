@@ -106,5 +106,7 @@
     <File Name="Financeira.cpp"/>
     <File Name="Moeda.h"/>
     <File Name="Moeda.cpp"/>
+    <File Name="Dispositivo.h"/>
+    <File Name="Dispositivo.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
