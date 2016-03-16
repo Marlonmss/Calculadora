@@ -5,7 +5,7 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora\Calculadora.h" Name="FileName"/>
-      <int Value="10" Name="FirstVisibleLine"/>
+      <int Value="25" Name="FirstVisibleLine"/>
       <int Value="31" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
@@ -61,7 +61,7 @@
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\Alguem\git\Calculadora\Calculadora\Calculadora\Calculadora.cpp" Name="FileName"/>
-      <int Value="147" Name="FirstVisibleLine"/>
+      <int Value="102" Name="FirstVisibleLine"/>
       <int Value="163" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
