@@ -1,29 +1,33 @@
 #include "Dispositivo.h"
 
 Dispositivo::Dispositivo() : power(0)
-{
-}
+{}
 
 Dispositivo::Dispositivo(const Dispositivo& c)
 {
-    
+    power = c.power;
 }
 
-Dispositivo::~Dispositivo()
+
+void Dispositivo::ligar()
 {
+    power = 1;
 }
 
-virtual void Dispositivo::ligar()
+void Dispositivo::desligar()
 {
-    
+    power = 0;
 }
 
-virtual void Dispositivo::desligar()
+void Dispositivo::imprimir()
 {
-    
+	cout << power;
 }
 
-virtual void Dispositivo::imprimir() const
+ostream &operator<<(ostream &output, const Dispositivo &imprime)
 {
-    
+	if(imprime.power)
+		output << "Calculadora ligada.";
+	else
+		output << "Calculadora desligada.";
 }

@@ -1,15 +1,17 @@
 #ifndef DISPOSITIVO_H
 #define DISPOSITIVO_H
+#include <iostream>
+using namespace std;
 
 class Dispositivo
 {
-    public:
+    friend ostream &operator<<(ostream &, const Dispositivo &);
+	public:
         Dispositivo();
         Dispositivo(const Dispositivo& c);
-        ~Dispositivo();
         virtual void ligar();
         virtual void desligar();
-        virtual void imprimir() const;
+		virtual void imprimir();
     protected:
         bool power;
 

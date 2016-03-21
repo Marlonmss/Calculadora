@@ -3,6 +3,7 @@
 #include "Data.h"
 #include "Ponto.h"
 #include "Memoria.h"
+#include "Dispositivo.h"
 #include <string>
 #include <iostream>
 using namespace std;
@@ -16,19 +17,19 @@ class Calculadora : public Dispositivo
         Calculadora(const double& aa, const double& bb, const double& cc);
         Calculadora(const Calculadora& co);
         Calculadora(const int& dia, const int& mes, const int& ano);
-        void atribuir(const double& aa, const double& bb, const double& cc);
-        void imprimir() const;
-		void imprimirPontos() const;
-		void imprimirData() const;
-		void imprimirTudo() const;
-        double somar() const;
-        double multiplicar() const;
-        double betar() const;
+        virtual void atribuir(const double& aa, const double& bb, const double& cc);
+        virtual void imprimir() const;
+		virtual void imprimirPontos() const;
+		virtual void imprimirData() const;
+		virtual void imprimirTudo() const;
+        virtual double somar() const;
+        virtual double multiplicar() const;
+        virtual double betar() const;
         static double retorna_beta();
         static void divertir(const string& meme);
-        void operarPontos();
-		void guardarAntigos();
-		void adicionarPonto(const Ponto& pont);
+        virtual void operarPontos();
+		virtual void guardarAntigos();
+		virtual void adicionarPonto(const Ponto& pont);
 		const Calculadora& operator=(const Calculadora& co);
 		
 	protected:

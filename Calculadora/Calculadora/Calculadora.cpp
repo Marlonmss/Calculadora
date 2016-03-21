@@ -12,7 +12,7 @@ Calculadora::Calculadora(const double& aa, const double& bb, const double& cc)
 : memo(), variavel_a(aa), variavel_b(bb), variavel_c(cc), alpha(0,0,0,0,0), gama(0,0,0,0,0), delta(0,0,0,0,0), lista(NULL), dim(0)
 {}
 
-Calculadora::Calculadora(const Calculadora& co)
+Calculadora::Calculadora(const Calculadora& co) : Dispositivo(static_cast<Dispositivo> (co))
 {
     variavel_a = co.variavel_a;
     variavel_b = co.variavel_b;
@@ -25,6 +25,7 @@ Calculadora::Calculadora(const Calculadora& co)
 	lista = new Ponto[dim];
 	for(int i=0; i<dim; i++)
 		lista[i] = co.lista[i];
+	power = co.power;
 }
 
 Calculadora::Calculadora(const int& dia, const int& mes, const int& ano) : ligou(dia,mes,ano)
@@ -137,7 +138,8 @@ void Calculadora::adicionarPonto(const Ponto& pont)
 
 ostream &operator<<(ostream &output, const Calculadora &imprime)
 {
-    output << imprime.variavel_a << ", " << imprime.variavel_b << ", " << imprime.variavel_c;
+    output << static_cast<Dispositivo> (imprime);
+	output << imprime.variavel_a << ", " << imprime.variavel_b << ", " << imprime.variavel_c;
 	imprime.alpha.imprimir();
 	imprime.gama.imprimir();
 	imprime.delta.imprimir();
@@ -146,11 +148,13 @@ ostream &operator<<(ostream &output, const Calculadora &imprime)
 		imprime.lista[i].imprimir();
 	}
 	imprime.memo.imprimir();
+	imprime.imprimir();
     return output;
 }
 
 const Calculadora& Calculadora::operator=(const Calculadora& co)
 {
+	static_cast<Dispositivo> (co);
 	variavel_a = co.variavel_a;
     variavel_b = co.variavel_b;
     variavel_c = co.variavel_c;
@@ -162,4 +166,5 @@ const Calculadora& Calculadora::operator=(const Calculadora& co)
 	lista = new Ponto[dim];
 	for(int i=0; i<dim; i++)
 		lista[i] = co.lista[i];
+	power = co.power;
 }
