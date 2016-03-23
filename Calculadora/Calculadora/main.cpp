@@ -6,6 +6,7 @@ using namespace std;
 
 int main()
 {
+    const int n = 3;
 	/*Calculadora A, B(2.0,3.0,4.5), C(15,3,1999);
 	Ponto T(1,2,3,4,5), R(1,1,1,1,1),S;
 	A.atribuir(2.4,56.77,9.0);
@@ -31,7 +32,7 @@ int main()
 
 	return 0; */
 	
-	vector<Cientifica> vteste;
+	vector<Calculadora *> vteste(n);
 	/*for(int i=1; i<=5; i++)
 		vteste.push_back(i);
 		
@@ -42,16 +43,24 @@ int main()
 	
 	return 0;*/
 	
-	Ponto A(1,2,3,4,5);
-	vteste[0].seno(12);
-	vteste[0].cosseno(12);
-	vteste[0].tangente(12);
-	vteste[0].atribuir(1,2,3);
-	vteste[0].operarPontos();
-	vteste[0].guardarAntigos();
-	vteste[0].adicionarPonto(A);
-	
-	cout << vteste[0];
-	
+	vteste[0] = new Cientifica();
+    vteste[1] = new Financeira();
+    vteste[2] = new Debug();
+    
+    for (int i = 0; i < vteste.size(); i++)
+     {
+        Calculadora[i]->imprimir();
+        
+
+        Cientifica *derivedPtr =        
+           dynamic_cast < Cientifica * >
+              (vteste[i]);                       
+
+        if (derivedPtr !=0)
+        {
+           double valorseno = derivedPtr->seno(3);
+           cout << "Valor do seno: " << valorseno << endl;
+        }
+     }
 	return 0;
 }
