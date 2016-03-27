@@ -19,6 +19,17 @@ Financeira::Financeira(const Financeira& c)
 	memo = c.memo;
 }
 
+double Financeira::juros_simples(const double& capital, const double& taxa, const int& periodos)
+{
+	return valor_simples = capital * taxa * periodos;
+}
+
+double Financeira::juros_compostos(const double& capital, const double& taxa, const int& periodos)
+{
+	double montante = capital*pow((1+taxa), periodos);
+	return valor_composto = montante - capital;
+}
+
 void Financeira::imprimir() const
 {
 	cout << "Juros Simples: " << valor_simples << endl << "Juros Composto: " << valor_composto;

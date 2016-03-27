@@ -66,7 +66,7 @@ void Cientifica::imprimir() const
 {
 	cout << "Valor do seno: " << valor_seno << endl
 	<< "Valor do cosseno: " << valor_cosseno << endl
-	<< "Valor da tangente" << valor_tangente;
+	<< "Valor da tangente: " << valor_tangente;
 }
 
 void Cientifica::truncar()

@@ -1,66 +1,53 @@
 #include <iostream>
 #include "Calculadora.h"
 #include "Cientifica.h"
+#include "Financeira.h"
 #include <vector>
 using namespace std;
 
 int main()
 {
     const int n = 3;
-	/*Calculadora A, B(2.0,3.0,4.5), C(15,3,1999);
-	Ponto T(1,2,3,4,5), R(1,1,1,1,1),S;
-	A.atribuir(2.4,56.77,9.0);
-	C.atribuir(3.0,1.0,0.0);
-	
-	cout << "A soma dos valores de C e: " << C.somar() << endl;
-	cout << "A multiplicacao dos valores de A e: " << A.multiplicar() << endl;
-	cout << "O modulo de T e: " << T.calcModulo() << endl;
-	cout << "A betagem de B e: " << B.betar() << endl;
-	cout << "o valor de beta: " << Calculadora::retorna_beta() << endl;
-	S = T+R;
-	cout << "O ponto S: ";
-	S.imprimir();
-	cout << "Os valores de A: ";
-	A.imprimir();
-	A.operarPontos();
-	cout << "Os pontos de A: " << endl;
-	A.imprimirPontos();
-	cout << "A data de C: ";
-	C.imprimirData();
-	
-	Calculadora::divertir("sapinho_zoeirinho");
-
-	return 0; */
 	
 	vector<Calculadora *> vteste(n);
-	/*for(int i=1; i<=5; i++)
-		vteste.push_back(i);
-		
-	cout << "Conteudo:";
-	for(vector<int>::iterator it = vteste.begin() ; it != vteste.end(); ++it)
-		cout << ' ' << *it;
-	cout << endl;
 	
-	return 0;*/
-	
-	/*vteste[0] = new Cientifica();
-    vteste[1] = new Financeira();
-    vteste[2] = new Debug();
+	vteste[0] = new Cientifica();
+	vteste[1] = new Cientifica();
+	vteste[2] = new Financeira();
     
-    for (int i = 0; i < vteste.size(); i++)
-     {
-        Calculadora[i]->imprimir();
-        
+    for(int i = 0; i < n; i++)
+	{
+        Cientifica *pontcien = dynamic_cast < Cientifica * > (vteste[i]);
+		Financeira *pontfinan = dynamic_cast < Financeira * > (vteste[i]);
 
-        Cientifica *derivedPtr =        
-           dynamic_cast < Cientifica * >
-              (vteste[i]);                       
-
-        if (derivedPtr !=0)
+        if(pontcien)
         {
-           double valorseno = derivedPtr->seno(3);
-           cout << "Valor do seno: " << valorseno << endl;
-        }
-     }
-	return 0;*/
+		   double temp;
+           cout << "Digite um valor para calcular o seno: ";
+		   cin >> temp;
+		   pontcien->seno(temp);
+		   cout << "Digite um valor para calcular o cosseno: ";
+		   cin >> temp;
+		   pontcien->cosseno(temp);
+		   cout << "Digite um valor para calcular a tangente: ";
+		   cin >> temp;
+		   pontcien->tangente(temp);
+		}
+		
+		if(pontfinan)
+		{
+			double p, i, n;
+			cout << "Digite o capital, taxa e o periodo para calcular os juros simples e compostos: ";
+			cin >> p >> i >> n;
+			pontfinan->juros_simples(p,i,n);
+			pontfinan->juros_compostos(p,i,n);
+		}
+		vteste[i]->imprimir();
+		cout << endl;
+	}
+	
+	vteste[0]->truncar();
+	cout << "\nO valor truncado e:\n";
+	vteste[0]->imprimir();
+	return 0;
 }
