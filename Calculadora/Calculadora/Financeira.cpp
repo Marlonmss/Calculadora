@@ -3,7 +3,7 @@
 Financeira::Financeira() : valor_simples(0), valor_composto(0)
 {}
 
-Financeira::Financeira(const Financeira& c) : Calculadora(static_cast<Calculadora> (c))
+Financeira::Financeira(const Financeira& c)
 {
     valor_simples = c.valor_simples;
     valor_composto = c.valor_composto;
@@ -26,7 +26,6 @@ void Financeira::imprimir() const
 
 ostream &operator<<(ostream &output, const Financeira &imprime)
 {
-	output << static_cast<Calculadora> (imprime);
     output << imprime.valor_simples << ", " << imprime.valor_composto;
 	imprime.imprimirTudo();
     return output;
@@ -34,7 +33,6 @@ ostream &operator<<(ostream &output, const Financeira &imprime)
 
 const Financeira& Financeira::operator=(const Financeira& c)
 {
-	static_cast<Calculadora> (c);
 	valor_simples = c.valor_simples;
     valor_composto = c.valor_composto;
 	variavel_a = c.variavel_a;
@@ -47,4 +45,10 @@ const Financeira& Financeira::operator=(const Financeira& c)
 	for(int i=0; i<dim; i++)
 		lista[i] = c.lista[i];
 	memo = c.memo;
+}
+
+void Financeira::truncar()
+{
+	valor_simples = (int) valor_simples;
+	valor_composto = (int) valor_composto;
 }

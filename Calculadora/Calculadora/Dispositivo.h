@@ -9,9 +9,8 @@ class Dispositivo
 	public:
         Dispositivo();
         Dispositivo(const Dispositivo& c);
-        virtual void ligar();
-        virtual void desligar();
-		virtual void imprimir();
+        virtual void ligar() = 0;
+        virtual void desligar() = 0;
     protected:
         bool power;
 

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Alguem
-Date                   :=20/03/2016
+Date                   :=27/03/2016
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe"
 SharedObjectLinkerName :="C:/Program Files (x86)/CodeBlocks/MinGW/bin/g++.exe" -shared -fPIC
@@ -62,8 +62,7 @@ AS       := "C:/Program Files (x86)/CodeBlocks/MinGW/bin/as.exe"
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) $(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix) $(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix) $(IntermediateDirectory)/Dispositivo.cpp$(ObjectSuffix) $(IntermediateDirectory)/Debug.cpp$(ObjectSuffix) \
-	
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Calculadora.cpp$(ObjectSuffix) $(IntermediateDirectory)/Data.cpp$(ObjectSuffix) $(IntermediateDirectory)/Ponto.cpp$(ObjectSuffix) $(IntermediateDirectory)/Memoria.cpp$(ObjectSuffix) $(IntermediateDirectory)/Cientifica.cpp$(ObjectSuffix) $(IntermediateDirectory)/Financeira.cpp$(ObjectSuffix) $(IntermediateDirectory)/Moeda.cpp$(ObjectSuffix) $(IntermediateDirectory)/Dispositivo.cpp$(ObjectSuffix) 
 
 
 
@@ -165,14 +164,6 @@ $(IntermediateDirectory)/Dispositivo.cpp$(DependSuffix): Dispositivo.cpp
 
 $(IntermediateDirectory)/Dispositivo.cpp$(PreprocessSuffix): Dispositivo.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Dispositivo.cpp$(PreprocessSuffix) "Dispositivo.cpp"
-
-$(IntermediateDirectory)/Debug.cpp$(ObjectSuffix): Debug.cpp $(IntermediateDirectory)/Debug.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/Users/Alguem/git/Calculadora/Calculadora/Calculadora/Debug.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Debug.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Debug.cpp$(DependSuffix): Debug.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/Debug.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/Debug.cpp$(DependSuffix) -MM "Debug.cpp"
-
-$(IntermediateDirectory)/Debug.cpp$(PreprocessSuffix): Debug.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Debug.cpp$(PreprocessSuffix) "Debug.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

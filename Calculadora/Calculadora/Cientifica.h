@@ -14,6 +14,8 @@ class Cientifica : public Calculadora
         double cosseno(const double& teta);
         double tangente(const double& teta);
 		const Cientifica& operator=(const Cientifica& c);
+		virtual void imprimir() const;
+		virtual void truncar();
     private:
         double valor_seno;
         double valor_cosseno;

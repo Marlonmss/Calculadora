@@ -43,7 +43,7 @@ int main()
 	
 	return 0;*/
 	
-	vteste[0] = new Cientifica();
+	/*vteste[0] = new Cientifica();
     vteste[1] = new Financeira();
     vteste[2] = new Debug();
     
@@ -62,5 +62,5 @@ int main()
            cout << "Valor do seno: " << valorseno << endl;
         }
      }
-	return 0;
+	return 0;*/
 }

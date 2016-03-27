@@ -108,7 +108,5 @@
     <File Name="Moeda.cpp"/>
     <File Name="Dispositivo.h"/>
     <File Name="Dispositivo.cpp"/>
-    <File Name="Debug.h"/>
-    <File Name="Debug.cpp"/>
   </VirtualDirectory>
 </CodeLite_Project>
