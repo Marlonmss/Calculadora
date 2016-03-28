@@ -16,10 +16,14 @@ class Cientifica : public Calculadora
 		const Cientifica& operator=(const Cientifica& c);
 		virtual void imprimir() const;
 		virtual void truncar();
+        virtual bool ligar();
+        virtual bool desligar();
+        
     private:
         double valor_seno;
         double valor_cosseno;
         double valor_tangente;
+        bool power;
 };
 
 #endif // CIENTIFICA_H

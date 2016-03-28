@@ -15,9 +15,12 @@ class Financeira : public Calculadora
 		const Financeira& operator=(const Financeira& c);
 		virtual void imprimir() const;
 		virtual void truncar();
+        virtual bool ligar();
+        virtual bool desligar();
 	protected:
 		double valor_simples;
         double valor_composto;
+        bool power;
 };
 
 #endif // FINANCEIRA_H

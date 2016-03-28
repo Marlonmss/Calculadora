@@ -25,7 +25,6 @@ Calculadora::Calculadora(const Calculadora& co)
 	lista = new Ponto[dim];
 	for(int i=0; i<dim; i++)
 		lista[i] = co.lista[i];
-	power = co.power;
 }
 
 Calculadora::Calculadora(const int& dia, const int& mes, const int& ano) : ligou(dia,mes,ano)
@@ -158,15 +157,4 @@ const Calculadora& Calculadora::operator=(const Calculadora& co)
 	lista = new Ponto[dim];
 	for(int i=0; i<dim; i++)
 		lista[i] = co.lista[i];
-	power = co.power;
-}
-
-void Calculadora::ligar()
-{
-    power = 1;
-}
-
-void Calculadora::desligar()
-{
-    power = 0;
 }

@@ -31,8 +31,6 @@ class Calculadora : public Dispositivo
 		void guardarAntigos();
 		void adicionarPonto(const Ponto& pont);
 		const Calculadora& operator=(const Calculadora& co);
-		virtual void ligar();
-		virtual void desligar();
 		virtual void truncar() = 0;
 		
 	protected:

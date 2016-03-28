@@ -63,3 +63,13 @@ void Financeira::truncar()
 	valor_simples = (int) valor_simples;
 	valor_composto = (int) valor_composto;
 }
+
+bool Financeira::ligar()
+{
+    return power = 1;
+}
+
+bool Financeira::desligar()
+{
+    return power = 0;
+}

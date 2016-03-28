@@ -9,8 +9,8 @@ class Dispositivo
 	public:
         Dispositivo();
         Dispositivo(const Dispositivo& c);
-        virtual void ligar() = 0;
-        virtual void desligar() = 0;
+        virtual bool ligar() = 0;
+        virtual bool desligar() = 0;
     protected:
         bool power;
 

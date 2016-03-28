@@ -12,15 +12,21 @@ int main()
 	vector<Calculadora *> vteste(n);
 	
 	vteste[0] = new Cientifica();
+    bool cientifica1 = vteste[0] -> ligar();
+    cout << "Calculadora Cientifica 1 está ligada." << endl;
 	vteste[1] = new Cientifica();
+    bool cientifica2 = vteste[1] -> ligar();
+    cout << "Calculadora Cientifica 2 está ligada." << endl;
 	vteste[2] = new Financeira();
+    bool financeira1 = vteste[2] -> ligar();
+    cout << "Calculadora Financeira 1 está ligada." << endl;
     
     for(int i = 0; i < n; i++)
 	{
         Cientifica *pontcien = dynamic_cast < Cientifica * > (vteste[i]);
 		Financeira *pontfinan = dynamic_cast < Financeira * > (vteste[i]);
 
-        if(pontcien)
+        if(pontcien && cientifica1 && cientifica2)
         {
 		   double temp;
            cout << "Digite um valor para calcular o seno: ";
@@ -34,7 +40,7 @@ int main()
 		   pontcien->tangente(temp);
 		}
 		
-		if(pontfinan)
+		if(pontfinan && financeira1)
 		{
 			double p, i, n;
 			cout << "Digite o capital, taxa e o periodo para calcular os juros simples e compostos: ";
@@ -49,5 +55,11 @@ int main()
 	vteste[0]->truncar();
 	cout << "\nO valor truncado e:\n";
 	vteste[0]->imprimir();
+    
+    for(int i=0; i<n; i++)
+        vteste[0] -> desligar();
+        
+    cout << "\n\nAs Calculadoras desligaram." << endl;
+
 	return 0;
 }

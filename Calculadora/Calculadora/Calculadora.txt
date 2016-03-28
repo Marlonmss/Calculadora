@@ -1,1 +1,1 @@
-./Debug/main.cpp.o ./Debug/Calculadora.cpp.o ./Debug/Data.cpp.o ./Debug/Ponto.cpp.o ./Debug/Memoria.cpp.o ./Debug/Cientifica.cpp.o ./Debug/Financeira.cpp.o ./Debug/Moeda.cpp.o ./Debug/Dispositivo.cpp.o   
+./Debug/main.cpp.o ./Debug/Calculadora.cpp.o ./Debug/Data.cpp.o ./Debug/Ponto.cpp.o ./Debug/Memoria.cpp.o ./Debug/Cientifica.cpp.o ./Debug/Financeira.cpp.o ./Debug/Dispositivo.cpp.o

@@ -75,3 +75,13 @@ void Cientifica::truncar()
 	valor_cosseno = (int) valor_cosseno;
 	valor_tangente = (int) valor_tangente;
 }
+
+bool Cientifica::ligar()
+{
+    return power = 1;
+}
+
+bool Cientifica::desligar()
+{
+    return power = 0;
+}
