@@ -28,20 +28,22 @@ int main()
 
         if(pontcien && cientifica1 && cientifica2)
         {
-		   double temp;
-           cout << "Digite um valor para calcular o seno: ";
-		   cin >> temp;
-		   pontcien->seno(temp);
-		   cout << "Digite um valor para calcular o cosseno: ";
-		   cin >> temp;
-		   pontcien->cosseno(temp);
-		   cout << "Digite um valor para calcular a tangente: ";
-		   cin >> temp;
-		   pontcien->tangente(temp);
+			cout << "\n\tCalculadora Cientifica "<< i+1 << ": " << endl;
+			double temp;
+			cout << "Digite um valor para calcular o seno: ";
+			cin >> temp;
+			pontcien->seno(temp);
+			cout << "Digite um valor para calcular o cosseno: ";
+			cin >> temp;
+			pontcien->cosseno(temp);
+			cout << "Digite um valor para calcular a tangente: ";
+			cin >> temp;
+			pontcien->tangente(temp);
 		}
 		
 		if(pontfinan && financeira1)
 		{
+			cout << "\n\tCalculadora Financeira 1: " << endl;
 			double p, i, n;
 			cout << "Digite o capital, taxa e o periodo para calcular os juros simples e compostos: ";
 			cin >> p >> i >> n;
